@@ -1,6 +1,11 @@
 package library;
 import java.time.LocalDate;
 
+/**
+  *Publications found in Library
+  *@license.agreement Gnu General Public License 3.0
+  */
+
 public class Publication
 {
 	private String title;
@@ -8,6 +13,13 @@ public class Publication
 	private int copyright;
 	private String loanedTo;
 	private LocalDate dueDate;
+		
+	/**
+	  *Forming Publication section 
+	  *@param title			title of book/video
+	  *@param author		name of author
+	  *@param copyright		year of copyright
+	  */
 	
 	public Publication(String title, String author, int copyright)
 	{
@@ -20,6 +32,11 @@ public class Publication
 			throw new IllegalArgumentException("ERROR: Invalid Copyright");
 		}
 	}
+	/**
+	  *Checking out section
+	  *@param patron			name of customer/patron
+	  */	
+	
 	
 	public void checkout(String patron)
 	{
@@ -27,9 +44,16 @@ public class Publication
 		this.dueDate = LocalDate.now().plusDays(14);
 	}
 	
-	protected String toStringBldr(String pre, String time)
+	/**
+	  *Forming the Resultant Strings
+	  *@param bk			if it is a book
+	  *@param time		    the duration of video
+	  *@return				returning the string
+	  */
+	
+	protected String toStringBldr(String bk, String time)
 	{
-		if(pre == "Book")
+		if(bk == "Book")
 		{
 			if(loanedTo != null)
 			{
