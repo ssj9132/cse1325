@@ -32,11 +32,11 @@ public class Publication
 			throw new IllegalArgumentException("ERROR: Invalid Copyright");
 		}
 	}
+	
 	/**
 	  *Checking out section
 	  *@param patron			name of customer/patron
 	  */	
-	
 	
 	public void checkout(String patron)
 	{

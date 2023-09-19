@@ -11,7 +11,9 @@ public class LibraryManager
 		new_library.addPublication(new Publication("Atomic Habits", "James Clear", 2018));
 		new_library.addPublication(new Publication("2 States", "Chetan Bhagat", 2009));
 		new_library.addPublication(new Publication("The Alchemist", "Paulo Coelho", 1988));
-		new_library.addPublication(new Video("Oppenheimer","Christopher Nolan", 2023, 230 ));
+		new_library.addPublication(new Video("Oppenheimer","Christopher Nolan", 2023, 180 ));
+		new_library.addPublication(new Video("Ratatouille","Brad Bird", 2007, 110 ));
+		new_library.addPublication(new Video("Avatar 2","James Cameron", 2022, 192 ));
 		
 		System.out.println(new_library);
 		
