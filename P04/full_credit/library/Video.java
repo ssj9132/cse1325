@@ -32,8 +32,7 @@ public class Video extends Publication
 	 	}
 	 }
 	
-
-	 
+ 
 	 @Override
 	 public String toString()
 	 {

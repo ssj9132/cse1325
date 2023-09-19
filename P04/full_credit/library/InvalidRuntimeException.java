@@ -8,15 +8,7 @@ import java.time.Duration;
 
 public class InvalidRuntimeException extends ArithmeticException
 {
-	/**
-	  *Invalid Runtime Exception formed
-	  */
 	  
-	public InvalidRuntimeException()
-	{
-		super();
-	}
-	
 	/**
 	  *Message to indicate invalid runtime exception 
 	  *@param msg		message
