@@ -1,6 +1,10 @@
 package library;
-
 import java.time.Duration;
+
+/**
+  *Video from library for checking out
+  *@license.agreement Gnu General Public License 3.0
+  */
 
 public class Video extends Publication
 {
@@ -11,7 +15,7 @@ public class Video extends Publication
 	  *@param title 		title of video
 	  *@param author		writer of video
 	  *@param copyright		year of copyright for video
-	  *@param runtime		runtime of video in minutes
+	  *@param time			runtime of video in minutes
 	  */
 	 
 	 public Video(String title, String author, int copyright, int time)
@@ -24,7 +28,7 @@ public class Video extends Publication
 	 	}
 	 	else
 	 	{
-	 		this.time = Duration.ofminutes(time);
+	 		this.time = Duration.ofMinutes(time);
 	 	}
 	 }
 	

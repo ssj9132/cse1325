@@ -45,11 +45,11 @@ public class Publication
 		{
 			if(loanedTo != null)
 			{
-				return "Video: "+ title + "\n" + "   Author: " + author + "\n" + "   Copyright Year: " + copyright + "\n" + "Runtime: " + time + "\n" + "   Loaned To: " + loanedTo + "\n" + "   Due by: " + dueDate + "\n";
+				return "Video: "+ title + "\n" + "   Author: " + author + "\n" + "   Copyright Year: " + copyright + "\n" + "   Runtime: " + time + " minutes" + "\n" + "   Loaned To: " + loanedTo + "\n" + "   Due by: " + dueDate + "\n";
 			}
 			else
 			{
-				return "Video: "+ title + "\n" + "   Author: " + author + "\n" + "   Copyright Year: " + copyright + "\n" + "Runtime: " + time + "\n" ;
+				return "Video: "+ title + "\n" + "   Author: " + author + "\n" + "   Copyright Year: " + copyright + "\n" + "   Runtime: " + time + " minutes" + "\n" ;
 			}
 		}
 	}
@@ -57,7 +57,7 @@ public class Publication
 	@Override
 	public String toString()
 	{
-		return toString("Book", "");
+		return toStringBldr("Book", "");
 	}
 
 }
