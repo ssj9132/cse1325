@@ -31,14 +31,13 @@ public class Video extends Publication
 	 		this.time = Duration.ofMinutes(time);
 	 	}
 	 }
-	
+
  
 	 @Override
 	 public String toString()
 	 {
 	 	int rtime = (int)(time.getSeconds()/60);
 	 	return toStringBldr("Video", Integer.toString(rtime));
-	 	
 	 }
 	 
 }
