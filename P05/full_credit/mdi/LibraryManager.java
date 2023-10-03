@@ -13,7 +13,7 @@ public class LibraryManager
 	
 	public void ListBookVideo()
 	{
-		System.out.println("\nLibrary Catalogue\n");
+		System.out.println("\n=================\nLibrary Catalogue\n=================\n");
 		System.out.println(new_library);
 	}
 	public void AddBook()
