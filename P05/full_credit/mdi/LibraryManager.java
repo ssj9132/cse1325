@@ -13,6 +13,7 @@ public class LibraryManager
 	
 	public void ListBookVideo()
 	{
+		System.out.println("\nLibrary Catalogue\n");
 		System.out.println(new_library);
 	}
 	public void AddBook()
@@ -80,6 +81,7 @@ public class LibraryManager
 		}
 		public void check_in()
 		{
+			System.out.println(new_library);
 			Scanner in = new Scanner(System.in);
 			System.out.print("Which book/video to checkin? ");
 			int publicationIndex = in.nextInt();
