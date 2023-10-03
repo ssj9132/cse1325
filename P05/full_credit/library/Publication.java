@@ -43,7 +43,10 @@ public class Publication
 		this.loanedTo = patron;
 		this.dueDate = LocalDate.now().plusDays(14);
 	}
-	
+	/**
+	  *Checking in section
+	  */	
+	  
 	public void checkin()
 	{
         loanedTo = null;

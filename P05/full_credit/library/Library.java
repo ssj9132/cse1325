@@ -51,6 +51,11 @@ public class Library
 		
 	}
 	
+	/**
+	  *Checking in book/video 
+	  *@param publicationIndex		item number/index number
+	  */
+	  	
 	public void checkin(int publicationIndex)
 	{
 		if(publicationIndex >= 0 && publicationIndex < publications.size())
