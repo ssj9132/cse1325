@@ -44,6 +44,12 @@ public class Publication
 		this.dueDate = LocalDate.now().plusDays(14);
 	}
 	
+	public void checkin()
+	{
+        loanedTo = null;
+        dueDate = null;
+    }
+	
 	/**
 	  *Forming the Resultant Strings
 	  *@param bk			if it is a book

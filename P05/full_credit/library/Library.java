@@ -43,6 +43,22 @@ public class Library
 			Publication publication = publications.get(publicationIndex);
 			publication.checkout(patron);
 		}
+		
+		else
+		{
+			throw new IndexOutOfBoundsException("ERROR: Invalid Index");
+		}
+		
+	}
+	
+	public void checkin(int publicationIndex)
+	{
+		if(publicationIndex >= 0 && publicationIndex < publications.size())
+		{
+			Publication publication = publications.get(publicationIndex);
+			publication.checkin();
+		}
+		
 		else
 		{
 			throw new IndexOutOfBoundsException("ERROR: Invalid Index");
@@ -53,8 +69,13 @@ public class Library
 	@Override
 	
 	public String toString()
-	{
-		return (name + "\n\n" + "0) " + publications.get(0).toString() + "\n" + "1) " + publications.get(1).toString() + "\n" + "2) " + publications.get(2).toString() + "\n" + "3) " + publications.get(3).toString() + "\n" + "4) " + publications.get(4).toString() + "\n" + "5) " + publications.get(5).toString() + "\n") ;
+	{	
+		String return_string = name + "\n\n";
+		for (int i = 0; i < publications.size(); i++)
+		{
+			return_string = return_string + i+") " + publications.get(i).toString() + "\n";
+		}
+		return return_string;
 	}
 	
 }
