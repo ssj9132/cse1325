@@ -125,7 +125,6 @@ public class LibraryManager
 			
 			try(BufferedReader br = new BufferedReader(new FileReader(filename)))
 			{
-				System.out.println("hello");
 				this.new_library = new Library(br);
 			}
 			catch(Exception e)
