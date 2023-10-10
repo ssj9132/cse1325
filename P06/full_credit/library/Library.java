@@ -41,32 +41,21 @@ public class Library
 	
 	public Library(BufferedReader br) throws IOException
 	{
-		System.out.println("1");
 		this.name = br.readLine();
 		this.publications = new ArrayList<>();
-		System.out.println("2");
 		int size = Integer.parseInt(br.readLine());
-		System.out.println("3");
 	 	for(int i = 0; i < size; i++)
 	 	{
-	 		System.out.println("4");
 	 		String j = br.readLine();
-	 		System.out.println("5");
 	 		if(j.equals("video"))
 	 		{
-	 			System.out.println("6");
 	 			Video video = new Video(br);
-	 			System.out.println("7");
 	 			publications.add(video);
-	 			System.out.println("8");
 	 		}
 	 		else
 	 		{
-	 			System.out.println("9");
 	 			Publication publication = new Publication(br);
-	 			System.out.println("10");
 	 			publications.add(publication);
-	 			System.out.println("11");
 	 		}
 	 	}
 	}

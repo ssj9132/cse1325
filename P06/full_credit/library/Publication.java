@@ -40,34 +40,24 @@ public class Publication
 	
 	public Publication(BufferedReader br) throws IOException
 	{
-		System.out.println("p1");
+		
 		this.title     = br.readLine();
-		System.out.println("a");
 		this.author    = br.readLine();
-		System.out.println("b");
 		this.copyright = Integer.parseInt(br.readLine());
-		System.out.println("2");
 		
 		String m = br.readLine(); 
-		System.out.println("#"+m+"#");
-		System.out.println("3");
 		
 		if(m.equals("checked in"))
 		{
-			System.out.println("4");
 			loanedTo = null;
 			dueDate = null;
 		}
 		else
 		{
-			System.out.println("p5");
 			loanedTo = br.readLine();
-			System.out.println("p6");
 			String duedate = br.readLine();
-			System.out.println("p7");
 			System.out.println(duedate);
 			dueDate = LocalDate.parse(duedate);
-			System.out.println("p8");
 		}
 	}
 	public void save(BufferedWriter bw) throws IOException
