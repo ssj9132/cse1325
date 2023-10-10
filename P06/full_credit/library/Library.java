@@ -25,7 +25,11 @@ public class Library
 	this.name = name;
 	this.publications = new ArrayList<>();
 	}
-
+	/**
+	  *Save file
+	  *@param bw 		Buffered Writer variable
+	  *@throws IOException   exception for error in reading
+	  */
 	public void save(BufferedWriter bw) throws IOException
 	{
 		bw.write(name + '\n');
@@ -39,6 +43,11 @@ public class Library
 		}
 	}
 	
+	/**
+	  *Open file
+	  *@param br 		Buffered Reader variable
+	  *@throws IOException   exception for error in reading
+	  */
 	public Library(BufferedReader br) throws IOException
 	{
 		this.name = br.readLine();

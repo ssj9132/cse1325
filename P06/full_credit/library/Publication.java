@@ -37,7 +37,11 @@ public class Publication
 			throw new IllegalArgumentException("ERROR: Invalid Copyright");
 		}
 	}
-	
+	/**
+	  *Open file
+	  *@param br 		Buffered Reader variable
+	  *@throws IOException   exception for error in reading
+	  */
 	public Publication(BufferedReader br) throws IOException
 	{
 		
@@ -59,6 +63,12 @@ public class Publication
 			dueDate = LocalDate.parse(duedate);
 		}
 	}
+	
+	/**
+	  *Save file
+	  *@param bw 		Buffered Writer variable
+	  *@throws IOException   exception for error in reading
+	  */
 	public void save(BufferedWriter bw) throws IOException
 	{
 		bw.write("" + title     + '\n');

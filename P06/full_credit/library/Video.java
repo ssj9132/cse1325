@@ -35,12 +35,21 @@ public class Video extends Publication
 	 		this.time = Duration.ofMinutes(time);
 	 	}
 	 }
-
+	/**
+	  *Save file
+	  *@param bw 		Buffered Writer variable
+	  */
 	public void save(BufferedWriter bw) throws IOException
 	{
 		super.save(bw);
 		bw.write(""  + (int)(time.getSeconds()/60) + '\n');
 	}
+	
+	/**
+	  *Open file
+	  *@param br 		Buffered Reader variable
+	  *@throws IOException   exception for error in reading
+	  */
 	public Video(BufferedReader br) throws IOException
 	{
 		super(br);
