@@ -44,11 +44,8 @@ public class Video extends Publication
 	public Video(BufferedReader br) throws IOException
 	{
 		super(br);
-		System.out.println("v1");
 		String rt = br.readLine();
-		System.out.println("v2");
 		this.time = Duration.ofMinutes(Integer.parseInt(rt));
-		System.out.println("v3");
 	}
  
 	 @Override

@@ -56,7 +56,6 @@ public class Publication
 		{
 			loanedTo = br.readLine();
 			String duedate = br.readLine();
-			System.out.println(duedate);
 			dueDate = LocalDate.parse(duedate);
 		}
 	}
