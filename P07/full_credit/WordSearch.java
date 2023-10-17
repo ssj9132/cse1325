@@ -79,19 +79,53 @@ public class WordSearch {
         System.err.println ("\n" + NUM_PUZZLES + " puzzles with " 
             + NUM_THREADS + " threads"); // Show the # puzzles and threads
         // Solve all puzzles
-        solve(0, 0, NUM_PUZZLES);
+  		
+  		Thread[] threads = new Thread[NUM_THREADS];
+        int idx_2 = 0;
+        int quotient = NUM_PUZZLES/NUM_THREADS ;
+        int idx_3 = quotient;
+        
+        for(int i = 0; i<NUM_THREADS; ++i)
+        {
+        	final int idx1 = i;
+        	final int idx2 = idx_2;
+        	final int idx3 = idx_3 ;
+        	threads[i] = new Thread(() -> solve(idx1,idx2,idx3));
+        	threads[i].start();
+        	idx_2 = idx_3;
+        	idx_3 += quotient;
+        }
+        for(int i = 0; i<NUM_THREADS; ++i)
+        {
+        	try{
+        		threads[i].join();
+        	}
+     		catch(InterruptedException e){}
+        }
     }
 
     public void solve(int threadID, int firstPuzzle, int lastPuzzlePlusOne) {
         System.err.println("Thread " + threadID + ": " + firstPuzzle + "-" + (lastPuzzlePlusOne-1));
         for(int i=firstPuzzle; i<lastPuzzlePlusOne; ++i) {
-            Puzzle p = puzzles.get(i);
+            
+            Puzzle p;
+            synchronized(lk1)
+            {
+            	p = puzzles.get(i);
+            }
+            
             Solver solver = new Solver(p);
             for(String word : p.getWords()) {
                 try {
                     Solution s = solver.solve(word);
                     if(s == null) System.err.println("#### Failed to solve " + p.name() + " for '" + word + "'");
-                    else solutions.add(s);
+                    else 
+                    {
+                    	synchronized(lk2)
+                    	{
+                    		solutions.add(s);
+                    	}
+                    }
                 } catch (Exception e) {
                     System.err.println("#### Exception solving " + p.name() 
                         + " for " + word + ": " + e.getMessage());
@@ -114,7 +148,8 @@ public class WordSearch {
     public final int NUM_THREADS;
     public final int NUM_PUZZLES;
     public final boolean verbose;
-
+	public static Object lk1 = new Object();
+	public static Object lk2 = new Object();
     private List<Puzzle> puzzles = new ArrayList<>();;
     private SortedSet<Solution> solutions = new TreeSet<>();
 }

@@ -3,12 +3,13 @@ FULL CREDIT
 
 QUESTION 1: Why is String[] args changed to a LinkedList in WordSearch.main? (Hint: Examine the WordSearch constructor!)
 
-
-
+The reason why it is changed is because of the remove method where in the WordSearch program, args.remove(0) was used which means the first value was removed, with the use of LinkedList the next value is registered as the new first value.
+If it was an array, this would remain as an empty value with no change, that would cause issues to our program. Hence, LinkedList would solve this issue.
 
 QUESTION 2: How many puzzles did your machine need to solve with 1 thread to run for between 30 and 45 seconds: 
 
 
+1250
 
 
 QUESTION 3: Provide the output of 
@@ -43,24 +44,252 @@ sys	0m0.229s
 
 YOUR Timing:
 
+for i in {1..16} ; do time java WordSearch $i 1250 ../puzzle??.txt ; done
 
+1250 puzzles with 1 threads
+Thread 0: 0-1249
 
+real	0m41.504s
+user	0m30.673s
+sys	0m8.558s
 
+1250 puzzles with 2 threads
+Thread 0: 0-624
+Thread 1: 625-1249
+
+real	0m40.218s
+user	0m29.722s
+sys	0m8.700s
+
+1250 puzzles with 3 threads
+Thread 0: 0-415
+Thread 2: 832-1247
+Thread 1: 416-831
+
+real	0m39.892s
+user	0m26.579s
+sys	0m8.472s
+
+1250 puzzles with 4 threads
+Thread 0: 0-311
+Thread 3: 936-1247
+Thread 2: 624-935
+Thread 1: 312-623
+
+real	0m37.775s
+user	0m26.923s
+sys	0m8.307s
+
+1250 puzzles with 5 threads
+Thread 1: 250-499
+Thread 2: 500-749
+Thread 0: 0-249
+Thread 3: 750-999
+Thread 4: 1000-1249
+
+real	0m37.966s
+user	0m28.281s
+sys	0m7.441s
+
+1250 puzzles with 6 threads
+Thread 0: 0-207
+Thread 1: 208-415
+Thread 2: 416-623
+Thread 3: 624-831
+Thread 4: 832-1039
+Thread 5: 1040-1247
+
+real	0m36.798s
+user	0m26.757s
+sys	0m7.797s
+
+1250 puzzles with 7 threads
+Thread 1: 178-355
+Thread 2: 356-533
+Thread 3: 534-711
+Thread 4: 712-889
+Thread 5: 890-1067
+Thread 0: 0-177
+Thread 6: 1068-1245
+
+real	0m36.393s
+user	0m26.559s
+sys	0m7.363s
+
+1250 puzzles with 8 threads
+Thread 0: 0-155
+Thread 4: 624-779
+Thread 3: 468-623
+Thread 2: 312-467
+Thread 1: 156-311
+Thread 5: 780-935
+Thread 6: 936-1091
+Thread 7: 1092-1247
+
+real	0m37.450s
+user	0m27.435s
+sys	0m7.706s
+
+1250 puzzles with 9 threads
+Thread 1: 138-275
+Thread 3: 414-551
+Thread 2: 276-413
+Thread 0: 0-137
+Thread 4: 552-689
+Thread 5: 690-827
+Thread 6: 828-965
+Thread 7: 966-1103
+Thread 8: 1104-1241
+
+real	1m6.485s
+user	0m28.950s
+sys	0m9.926s
+
+1250 puzzles with 10 threads
+Thread 0: 0-124
+Thread 2: 250-374
+Thread 1: 125-249
+Thread 3: 375-499
+Thread 4: 500-624
+Thread 5: 625-749
+Thread 6: 750-874
+Thread 9: 1125-1249
+Thread 8: 1000-1124
+Thread 7: 875-999
+
+real	0m52.233s
+user	0m25.448s
+sys	0m12.032s
+
+1250 puzzles with 11 threads
+Thread 1: 113-225
+Thread 4: 452-564
+Thread 3: 339-451
+Thread 2: 226-338
+Thread 0: 0-112
+Thread 5: 565-677
+Thread 6: 678-790
+Thread 7: 791-903
+Thread 8: 904-1016
+Thread 9: 1017-1129
+Thread 10: 1130-1242
+
+real	0m45.145s
+user	0m29.505s
+sys	0m7.461s
+
+1250 puzzles with 12 threads
+Thread 2: 208-311
+Thread 5: 520-623
+Thread 4: 416-519
+Thread 3: 312-415
+Thread 1: 104-207
+Thread 0: 0-103
+Thread 6: 624-727
+Thread 7: 728-831
+Thread 8: 832-935
+Thread 9: 936-1039
+Thread 11: 1144-1247
+Thread 10: 1040-1143
+
+real	0m42.660s
+user	0m27.596s
+sys	0m7.437s
+
+1250 puzzles with 13 threads
+Thread 1: 96-191
+Thread 3: 288-383
+Thread 2: 192-287
+Thread 0: 0-95
+Thread 4: 384-479
+Thread 5: 480-575
+Thread 6: 576-671
+Thread 7: 672-767
+Thread 12: 1152-1247
+Thread 10: 960-1055
+Thread 11: 1056-1151
+Thread 9: 864-959
+Thread 8: 768-863
+
+real	0m41.633s
+user	0m26.782s
+sys	0m7.416s
+
+1250 puzzles with 14 threads
+Thread 1: 89-177
+Thread 3: 267-355
+Thread 2: 178-266
+Thread 0: 0-88
+Thread 5: 445-533
+Thread 4: 356-444
+Thread 6: 534-622
+Thread 13: 1157-1245
+Thread 7: 623-711
+Thread 12: 1068-1156
+Thread 11: 979-1067
+Thread 10: 890-978
+Thread 9: 801-889
+Thread 8: 712-800
+
+real	0m45.628s
+user	0m27.538s
+sys	0m8.188s
+
+1250 puzzles with 15 threads
+Thread 0: 0-82
+Thread 5: 415-497
+Thread 4: 332-414
+Thread 2: 166-248
+Thread 1: 83-165
+Thread 7: 581-663
+Thread 6: 498-580
+Thread 3: 249-331
+Thread 8: 664-746
+Thread 9: 747-829
+Thread 10: 830-912
+Thread 11: 913-995
+Thread 12: 996-1078
+Thread 13: 1079-1161
+Thread 14: 1162-1244
+
+real	0m47.138s
+user	0m28.268s
+sys	0m8.462s
+
+1250 puzzles with 16 threads
+Thread 0: 0-77
+Thread 4: 312-389
+Thread 1: 78-155
+Thread 2: 156-233
+Thread 3: 234-311
+Thread 5: 390-467
+Thread 6: 468-545
+Thread 7: 546-623
+Thread 8: 624-701
+Thread 9: 702-779
+Thread 10: 780-857
+Thread 11: 858-935
+Thread 15: 1170-1247
+Thread 12: 936-1013
+Thread 14: 1092-1169
+Thread 13: 1014-1091
+
+real	0m44.809s
+user	0m29.983s
+sys	0m7.001s
 
 
 
 QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program even slightly?  Why or why not?
 
-
-
-
+It depends mostly, it can either speed it up or slow it down, as external factors can impact the time of the program. The factors include 
+various things like background programs running, capacity of the computer to handle tasks etc.
 
 
 QUESTION 4: Does adding more threads increase the "system load" (sys), or is it constant regardless of the number of threads?  Why?
 
-
-
-
+If more threads are added, the system load increases as threads consumes system resources like memory and execution time.
+As you add more threads, the threads try to access the same shared system resources which ultimately causes ineffeciency leading to increase in the system load.
 
 
 BONUS
