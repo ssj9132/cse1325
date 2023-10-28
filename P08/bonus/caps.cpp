@@ -27,7 +27,7 @@ int main(int args, char* argv[])
 	{
 		std::cout<<j<<std::endl;
 	}
-	std::cout<<"Lower Case: "<<std::endl;
+	std::cout<<"\nLower Case: "<<std::endl;
 	for(auto k: *no_caps)
 	{
 		std::cout<<k<<std::endl;
