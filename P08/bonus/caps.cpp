@@ -6,14 +6,15 @@ int main(int args, char* argv[])
 {
 	std::vector<std::string> caps;
 	std::vector<std::string>* no_caps = new std::vector<std::string>;
-	for(int i = 0; i<args; i++)
+	for(int i = 1; i<args; i++)
 	{
 		std::string word;
-		word == argv[i];
+		word = argv[i];
 		
 		if(argv != NULL && isupper(word[0]))
 		{
 			caps.push_back(word);
+
 		}
 		else
 		{
