@@ -1,10 +1,6 @@
 #include <iostream>
 #include "Shape.h"
 
-std::string Shape::name()
-{
-	return "Shape";
-}
 
 double Shape::area()
 {

@@ -4,7 +4,7 @@
 class Shape
 {
 	public:
-		virtual std::string name();
+		virtual std::string name() = 0;
 		virtual double area();
 		std::string to_string();
 };
