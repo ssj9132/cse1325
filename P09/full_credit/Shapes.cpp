@@ -6,16 +6,16 @@
 
 int main()
 {
-	std::vector<Shape*> shapes;
+	std::vector<Shape*> shape;
 	Rectangle R(3, 4);
 	Circle C(2);
 	
-	shapes.push_back(&R);
-	shapes.push_back(&C);
+	shape.push_back(&R);
+	shape.push_back(&C);
 	
-	for(auto shape: shapes)
+	for(auto s: shape)
 	{
-		std::cout << shape->to_string() << std::endl;
+		std::cout << s->to_string() << std::endl;
 	}
 
 }
