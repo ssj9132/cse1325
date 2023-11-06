@@ -2,13 +2,16 @@
 #include <vector>
 #include "Shape.h"
 #include "Rectangle.h"
+#include "Circle.h"
 
 int main()
 {
 	std::vector<Shape*> shapes;
-	Rectangle rectangle(4.0, 5.0);
+	Rectangle R(3, 4);
+	Circle C(2);
 	
-	shapes.push_back(&rectangle);
+	shapes.push_back(&R);
+	shapes.push_back(&C);
 	
 	for(auto shape: shapes)
 	{

@@ -9,7 +9,7 @@ Rectangle::Rectangle(double height, double width) : _height{height}, _width{widt
 
 std::string Rectangle::name()
 {
-	return std::to_string(_height) + " X " + std::to_string(_width) + " Rectangle ";
+	return std::to_string(_height) + " X " + std::to_string(_width) + " Rectangle";
 }
 
 double Rectangle::area()
