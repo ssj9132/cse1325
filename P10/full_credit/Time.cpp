@@ -37,9 +37,9 @@ Time& Time::operator++()
 
 Time Time::operator++(int)
 {
-	Time temp = *this;
-	++(*this);
-	return temp;
+	Time _time{*this};
+	++*this;
+	return _time;
 }
 
 int Time::compare(const Time& time)
