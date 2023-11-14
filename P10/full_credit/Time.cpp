@@ -43,31 +43,18 @@ Time Time::operator++(int)
 
 int Time::compare(const Time& time)
 {
-	if (this->_hour<time._hour)
+	if (this->_hour!=time._hour)
 	{
-		return -1;
+		return this->_hour - time._hour;
 	}
-	if (this->_hour>time._hour)
+	else if (this->_minute!=time._minute)
 	{
-		return 1;
+		return this->_minute - time._minute;
 	}
-	if (this->_minute<time._minute)
+	else
 	{
-		return -1;
+		return this->_second - time._second;
 	}
-	if (this->_minute>time._minute)
-	{
-		return 1;
-	}
-	if (this->_second<time._second)
-	{
-		return -1;
-	}
-	if (this->_second>time._second)
-	{
-		return 1;
-	}   
-	return 0; 
 }
 
 std::ostream& operator<<(std::ostream& ost, const Time& time)
