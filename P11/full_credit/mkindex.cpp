@@ -1,8 +1,10 @@
+#include "Location.h"
+#include "Index.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <sstream>
-#include "Index.h"
+
 
 int main(int argc, char* argv[])
 {
@@ -57,8 +59,7 @@ int main(int argc, char* argv[])
 			
 			argv_idx += 1;
 			line_no = 1;
-
-			
+	
 		}
 		
 		std::cout << i << std::endl;
